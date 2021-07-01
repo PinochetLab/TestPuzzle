@@ -85,6 +85,10 @@ public class Figure : MonoBehaviour
 		transform.position = startPos;
 	}
 
+	public Vector3 GetStartPos() {
+		return startPos;
+	}
+
 	public void ScaleToFieldSize() {
 		Vector3 lastCenter = GetCenter();
 		float scale = 700f / rectTransform.sizeDelta.x;

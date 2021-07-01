@@ -22,7 +22,7 @@ public class Desk : MonoBehaviour
 	}
 
 	public void TryFill(Figure figure) {
-		float distanceMax = 50;
+		float distanceMax = 80;
 		bool can = true;
 		for (int i = 0; i < 4; i++ ) {
 			for (int j = 0; j < 4; j++ ) {
@@ -78,8 +78,36 @@ public class Desk : MonoBehaviour
 		
 
 		else{
-			figure.Rescale();
-			figure.ResetPosition();
+			StartCoroutine(ReturnToPlace(figure));
+		}
+	}
+
+	IEnumerator ReturnToPlace(Figure figure) {
+		Vector3 nowPos = figure.transform.position;
+		RectTransform rectTransform = figure.GetComponent<RectTransform>();
+		CellsResizer cellResizer = figure.GetComponent<CellsResizer>();
+		Vector2 nowScale = rectTransform.sizeDelta;
+		
+		figure.Rescale();
+		figure.ResetPosition();
+		Vector3 targetPos = figure.transform.position;
+		print(targetPos);
+		Vector2 targetScale = rectTransform.sizeDelta;
+
+
+
+		figure.transform.position = nowPos;
+		rectTransform.sizeDelta = nowScale;
+		cellResizer.Resize();
+		float speed = 2000f;
+		float dist = (nowPos - targetPos).magnitude;
+		
+		int n = (int)((dist / speed) / 0.01f);
+		for (int i = 0; i <= n; i++ ) {
+			figure.transform.position = nowPos + (targetPos - nowPos) * (float)(i) / (float)(n);
+			rectTransform.sizeDelta = nowScale + (targetScale - nowScale) * (float)(i) / (float)(n);
+			cellResizer.Resize();
+			yield return new WaitForSeconds(dist / speed / n);
 		}
 	}
 }

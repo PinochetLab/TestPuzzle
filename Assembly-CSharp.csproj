@@ -56,18 +56,18 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Figure.cs" />
-    <Compile Include="Assets\Scripts\FigureDragAndDrop.cs" />
-    <Compile Include="Assets\Scripts\CellsResizer.cs" />
-    <Compile Include="Assets\Scripts\Desk.cs" />
-    <Compile Include="Assets\Scripts\CollorSetter.cs" />
-    <Compile Include="Assets\Scripts\FigureReset.cs" />
-    <Compile Include="Assets\Scripts\FigureResetButton.cs" />
-    <Compile Include="Assets\Scripts\FileReader.cs" />
     <Compile Include="Assets\Scripts\SceneChange.cs" />
     <Compile Include="Assets\Scripts\WinController.cs" />
-    <Compile Include="Assets\ProgressLoader.cs" />
+    <Compile Include="Assets\Scripts\CollorSetter.cs" />
+    <Compile Include="Assets\Scripts\Figure.cs" />
+    <Compile Include="Assets\Scripts\FigureDragAndDrop.cs" />
+    <Compile Include="Assets\Scripts\FigureResetButton.cs" />
+    <Compile Include="Assets\Scripts\FileReader.cs" />
     <Compile Include="Assets\SafeAreaFilter.cs" />
+    <Compile Include="Assets\Scripts\CellsResizer.cs" />
+    <Compile Include="Assets\ProgressLoader.cs" />
+    <Compile Include="Assets\Scripts\FigureReset.cs" />
+    <Compile Include="Assets\Scripts\Desk.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

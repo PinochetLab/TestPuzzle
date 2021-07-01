@@ -18,7 +18,20 @@ public class WinController : MonoBehaviour
 			}
 		}
 
-		winWindow.SetActive(true);
+		
 		PlayerPrefs.SetInt("DoneLevel", level);
+		StartCoroutine(Win());
+	}
+
+	IEnumerator Win() {
+		yield return new WaitForSeconds(0.5f);
+		winWindow.SetActive(true);
+		CanvasGroup canvasGroup = winWindow.GetComponent<CanvasGroup>();
+		int n = 30;
+		float time = 0.5f;
+		for (int i = 0; i <= n; i++ ) {
+			canvasGroup.alpha = (float)i / (float)n;
+			yield return new WaitForSeconds(time / n);
+		}
 	}
 }
