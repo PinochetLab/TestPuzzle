@@ -1,0 +1,4 @@
+#Thu Jul 01 17:23:47 NOVT 2021
+base.0=D\:\\Materials\\Unity\\TestPuzzle\\Temp\\gradleOut\\launcher\\build\\intermediates\\dex\\release\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
